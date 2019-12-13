@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'serviceapp/base.html' %}
+{% block content %}
+{% load qr_code %}
+{% csrf_token %}
+{% for qrcode in object_list %}
+<ul>
+    <img src="{{qrcode.image.url}}" />{% qr_from_text 'Hi' size=20 %}
+    <li><span>{{qrcode.zone.name}}</span></li>
+    <li><span>{{qrcode.unique_id}}</span></li>
+</ul>
+{% empty %}
+    <p> Нет QR-кодов</p>
+{% endfor %}
+{% endblock content %}
