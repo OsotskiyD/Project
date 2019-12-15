@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gvubolj92=^rn@jf2snibk6^%!+)*6jpem*-8-qydvkqnt5(8u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://osdim.pythonanywhere.com']
 
 
 # Application definition
