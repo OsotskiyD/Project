@@ -1,0 +1,50 @@
+{% extends 'serviceapp/base.html' %}
+{% block content %}
+{% load staticfiles %}
+    <html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>QR</title>
+
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css" rel="stylesheet">
+</head>
+  <body>
+    <form method="post" class="form-signin">{% csrf_token %}
+		<div><img src="{% static 'images\290px-Sciurus_vulgaris_Обыкновенная_белка_Портрет.jpg' %}", alt= "", width= "290px", hight="272px"</div>
+		<div class="text-center mb-4">
+            <img class="mb-4" src="{static 'url'}" alt="" width="150">
+            <h1 class="h3 mb-3 font-weight-normal">Есть что сказать?</h1>
+            <p>Опиши всё, что думаешь</p>
+          </div>
+        <div class="form-label-group">
+            {{ form.text }}
+            {{ form.text.errors }}
+        </div>
+
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="switch" onclick="if(this.checked){document.getElementById('hidden').style.display='block';} else {document.getElementById('hidden').style.display='none';}">
+          <label class="custom-control-label" for="switch">Оставить контакты</label>
+        </div>
+        <div id="hidden" style="display: none;">
+            <div class="form-label-group">
+                {{ form.name }}
+                {{ form.name.errors }}
+                <label for="id_name">Имя</label>
+            </div>
+
+            <div class="form-label-group">
+                {{ form.contact }}
+                {{ form.contact.errors }}
+                <label for="id_contact">Контакт</label>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-secondary btn-block" type="submit">Отправить</button>
+
+        <p class="mt-5 mb-3 text-muted text-center">политика конфиденциальности</p>
+    </form>
+ {% endblock content %}
+
+
+
