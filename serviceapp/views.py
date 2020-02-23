@@ -15,5 +15,6 @@ class FeedbackView(FormView):
         form.save()
         return super().form_valid(form)
 
+
 class QRListView(ListView):
     model = QRCode
