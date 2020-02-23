@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'DIRS': [os.path.join(BASE_DIR, 'serviceapp/templates/serviceapp')],
+        'DIRS': [os.path.join(BASE_DIR, 'serviceapp/templates/serviceapp').replace("\\", "/")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
