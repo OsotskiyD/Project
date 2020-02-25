@@ -25,7 +25,7 @@ SECRET_KEY = 'gvubolj92=^rn@jf2snibk6^%!+)*6jpem*-8-qydvkqnt5(8u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['osdim.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'osdim.pythonanywhere.com']
 
 
 # Application definition
@@ -57,8 +57,7 @@ ROOT_URLCONF = 'service.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'DIRS': [os.path.join(BASE_DIR, 'serviceapp/templates/serviceapp').replace("\\", "/")],
+        'DIRS': ['/serviceapp/templates/serviceapp'.replace("\\", "/")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
